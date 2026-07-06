@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI手取りラボ | 年収から手取りを3秒で計算</title>
+<meta name="description" content="年収・年齢・都道府県・扶養人数を入れるだけで、月の手取りと年間の手取りをAIが即計算する無料ツールです。">
+
+<!-- canonical
+     TODO: 本番ドメイン確定後に URL を差し替える(現在は仮ドメイン) -->
+<link rel="canonical" href="https://ai-shain-lab.com/tools/001-tedori-lab/">
+
+<!-- OGP (Facebook / LINE 等)
+     TODO: og-image.png を実際に用意してパスを差し替える -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI社員研究所">
+<meta property="og:title" content="AI手取りラボ | 年収から手取りを3秒で計算">
+<meta property="og:description" content="年収・年齢・都道府県・扶養人数を入れるだけで、月の手取りと年間の手取りをAIが即計算する無料ツールです。">
+<meta property="og:url" content="https://ai-shain-lab.com/tools/001-tedori-lab/">
+<meta property="og:image" content="https://ai-shain-lab.com/tools/001-tedori-lab/og-image.png">
+<meta property="og:locale" content="ja_JP">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI手取りラボ | 年収から手取りを3秒で計算">
+<meta name="twitter:description" content="年収・年齢・都道府県・扶養人数を入れるだけで、月の手取りと年間の手取りをAIが即計算する無料ツールです。">
+<meta name="twitter:image" content="https://ai-shain-lab.com/tools/001-tedori-lab/og-image.png">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <span class="header__mark" aria-hidden="true">研</span>
+      <div class="header__text">
+        <p class="header__brand">AI社員研究所</p>
+        <h1 class="header__title">AI手取りラボ</h1>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section class="card card--form" id="form-section">
+      <p class="card__lead">3つ入力するだけ。登録もログインも不要です。</p>
+
+      <form id="tedori-form" novalidate>
+
+        <div class="field">
+          <label for="income">年収(額面・万円)</label>
+          <input type="number" id="income" name="income" inputmode="numeric" placeholder="450" min="0" required>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="age">年齢</label>
+            <input type="number" id="age" name="age" inputmode="numeric" placeholder="30" min="15" max="99" required>
+          </div>
+
+          <div class="field">
+            <label for="dependents">扶養人数</label>
+            <input type="number" id="dependents" name="dependents" inputmode="numeric" placeholder="0" min="0" max="10" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="prefecture">都道府県</label>
+          <select id="prefecture" name="prefecture" required></select>
+        </div>
+
+        <p class="form-error" id="form-error" role="alert" hidden></p>
+
+        <button type="submit" class="btn-primary">
+          手取りを計算する
+        </button>
+        <p class="field-note">入力した内容はどこにも送信・保存されません。</p>
+      </form>
+    </section>
+
+    <section class="card card--result" id="result-section" hidden>
+
+      <div class="result-headline">
+        <p class="result-headline__label">あなたの手取り(月)</p>
+        <p class="result-headline__value"><span id="net-monthly">0</span><span class="unit">万円</span></p>
+        <p class="result-headline__sub" id="result-condition"></p>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <p class="stat-card__label">年間手取り</p>
+          <p class="stat-card__value"><span id="net-annual">0</span><span class="unit-sm">万円</span></p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-card__label">手取り率</p>
+          <p class="stat-card__value"><span id="net-rate">0</span><span class="unit-sm">%</span></p>
+        </div>
+      </div>
+
+      <div class="breakdown-bar" id="breakdown-bar" role="img" aria-label="手取りと控除の内訳バー">
+        <div class="breakdown-bar__segment breakdown-bar__segment--net" id="bar-net"></div>
+        <div class="breakdown-bar__segment breakdown-bar__segment--social" id="bar-social"></div>
+        <div class="breakdown-bar__segment breakdown-bar__segment--income-tax" id="bar-income-tax"></div>
+        <div class="breakdown-bar__segment breakdown-bar__segment--resident-tax" id="bar-resident-tax"></div>
+      </div>
+      <div class="breakdown-legend">
+        <span><i class="dot dot--net"></i>手取り</span>
+        <span><i class="dot dot--social"></i>社会保険</span>
+        <span><i class="dot dot--income-tax"></i>所得税</span>
+        <span><i class="dot dot--resident-tax"></i>住民税</span>
+      </div>
+
+      <div class="detail-list">
+        <div class="detail-row">
+          <span class="detail-row__label">健康保険(年間)</span>
+          <span class="detail-row__value"><span id="d-health">0</span> 万円</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-row__label">厚生年金(年間)</span>
+          <span class="detail-row__value"><span id="d-pension">0</span> 万円</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-row__label">雇用保険(年間)</span>
+          <span class="detail-row__value"><span id="d-employment">0</span> 万円</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-row__label">所得税(年間)</span>
+          <span class="detail-row__value"><span id="d-income-tax">0</span> 万円</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-row__label">住民税(年間)</span>
+          <span class="detail-row__value"><span id="d-resident-tax">0</span> 万円</span>
+        </div>
+      </div>
+
+      <div class="ai-comment" id="ai-comment">
+        <p class="ai-comment__label">AI社員からの一言</p>
+        <p class="ai-comment__text" id="ai-comment-text"></p>
+      </div>
+
+      <button type="button" class="btn-secondary" id="recalc-btn">条件を変えて再計算</button>
+
+      <p class="disclaimer">
+        ※本ツールの計算結果は簡易的な概算です。実際の手取り額は勤務先の制度や控除条件により異なります。
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>AI社員研究所 &mdash; AI社員001「AI手取りラボ」(MVP版)</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
