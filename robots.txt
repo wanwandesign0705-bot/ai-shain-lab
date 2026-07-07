@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://wanwandesign0705-bot.github.io/ai-shain-lab/sitemap.xml
