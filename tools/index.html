@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI残業代ラボ | 残業時間から残業代を3秒で計算</title>
+<meta name="description" content="残業時間と残業単価を入れるだけで、残業代の月額・年額・概算手取りをAIが即計算する無料ツールです。">
+
+<!-- favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<!-- canonical
+     NOTE: GitHub Pages想定URL。実際のorganization/repository名が
+     下記と異なる場合は、AI社員006(DevOps)に確認のうえ差し替えてください。 -->
+<link rel="canonical" href="https://ai-shain-lab.github.io/ai-shain-lab/tools/002-zangyodai-lab/">
+
+<!-- OGP (Facebook / LINE 等)
+     TODO: og-image.png(1200x630)を用意してパスを差し替える -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI社員研究所">
+<meta property="og:title" content="AI残業代ラボ | 残業時間から残業代を3秒で計算">
+<meta property="og:description" content="残業時間と残業単価を入れるだけで、残業代の月額・年額・概算手取りをAIが即計算する無料ツールです。">
+<meta property="og:url" content="https://ai-shain-lab.github.io/ai-shain-lab/tools/002-zangyodai-lab/">
+<meta property="og:image" content="https://ai-shain-lab.github.io/ai-shain-lab/tools/002-zangyodai-lab/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI残業代ラボ | 残業時間から残業代を3秒で計算">
+<meta name="twitter:description" content="残業時間と残業単価を入れるだけで、残業代の月額・年額・概算手取りをAIが即計算する無料ツールです。">
+<meta name="twitter:image" content="https://ai-shain-lab.github.io/ai-shain-lab/tools/002-zangyodai-lab/og-image.png">
+
+<!-- 構造化データ(JSON-LD): アプリ情報 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AI残業代ラボ",
+  "url": "https://ai-shain-lab.github.io/ai-shain-lab/tools/002-zangyodai-lab/",
+  "description": "残業時間と残業単価を入れるだけで、残業代の月額・年額・概算手取りを計算する無料ツール。",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+  },
+  "inLanguage": "ja",
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI社員研究所"
+  }
+}
+</script>
+
+<!-- 構造化データ(JSON-LD): FAQ
+     NOTE: 内容は本文中のFAQセクションと完全に一致させること -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "残業単価はどうやって調べればいいですか?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "多くの場合、給与明細に記載されている「時間外手当」の単価をそのまま入力すれば計算できます。基本給から自動で割増賃金を算出したい場合は、準備中の「AI残業単価ラボ」の公開をお待ちください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "深夜残業や休日出勤の割増分も計算できますか?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "現在のバージョンでは通常の残業単価のみに対応しています。深夜(25%増)や休日出勤(35%増)など割増率が異なるケースの個別計算は、今後のアップデートで対応を検討しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "概算手取りの精度はどれくらいですか?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "本ツールの概算手取りは、一律の概算控除率を使った簡易計算です。実際の手取りは基本給や扶養状況によって変わるため、より正確な年間の手取りを知りたい場合は「AI手取りラボ」の利用をおすすめします。"
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <span class="header__mark" aria-hidden="true">残</span>
+      <div class="header__text">
+        <p class="header__brand">AI社員研究所</p>
+        <h1 class="header__title">AI残業代ラボ</h1>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="ad-slot ad-slot--top" data-ad-position="top" aria-hidden="true"></div>
+
+    <section class="card card--form" id="form-section">
+      <h2 class="section-heading">残業時間から残業代を計算する</h2>
+      <p class="card__lead">2つ入力するだけ。登録もログインも不要です。</p>
+
+      <form id="zangyo-form" novalidate>
+
+        <div class="field">
+          <label for="hours">月の残業時間(時間)</label>
+          <input type="number" id="hours" name="hours" inputmode="numeric" placeholder="30" min="0" max="200" required>
+        </div>
+
+        <div class="field">
+          <label for="rate">残業単価(円/時間)</label>
+          <input type="number" id="rate" name="rate" inputmode="numeric" placeholder="2500" min="1" max="50000" required>
+          <p class="field-note">
+            <button type="button" class="link-button" id="rate-help-btn" aria-expanded="false" aria-controls="rate-help-note">
+              残業単価が分からない方はこちら
+            </button>
+          </p>
+          <p class="link-note" id="rate-help-note" hidden>
+            残業単価は、基本給から割増賃金を自動計算する「AI残業単価ラボ」(準備中)で調べられるようになる予定です。それまでは、給与明細に記載されている時間外手当の単価をご利用ください。
+          </p>
+        </div>
+
+        <p class="form-error" id="form-error" role="alert" hidden></p>
+
+        <button type="submit" class="btn-primary">
+          残業代を計算する
+        </button>
+        <p class="field-note">入力した内容はどこにも送信・保存されません。</p>
+      </form>
+    </section>
+
+    <section class="card card--result" id="result-section" hidden>
+      <h2 class="sr-only">計算結果</h2>
+
+      <div class="result-headline">
+        <p class="result-headline__label">残業代(月・税引き前)</p>
+        <p class="result-headline__value"><span id="overtime-monthly">0</span><span class="unit">万円</span></p>
+        <p class="result-headline__sub" id="result-condition"></p>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <p class="stat-card__label">残業代(年間)</p>
+          <p class="stat-card__value"><span id="overtime-annual">0</span><span class="unit-sm">万円</span></p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-card__label">税引き前(年間)</p>
+          <p class="stat-card__value"><span id="pretax-annual">0</span><span class="unit-sm">万円</span></p>
+        </div>
+      </div>
+
+      <div class="highlight-block">
+        <p class="highlight-block__label">概算手取り(年間)</p>
+        <p class="highlight-block__value"><span id="net-annual">0</span><span class="unit-sm">万円</span></p>
+        <p class="highlight-block__sub">(月あたり約<span id="net-monthly">0</span>万円 / 概算控除率20%で計算)</p>
+      </div>
+
+      <div class="ai-comment" id="ai-comment">
+        <h3 class="ai-comment__label">AI社員からの一言</h3>
+        <p class="ai-comment__text" id="ai-comment-text"></p>
+      </div>
+
+      <button type="button" class="btn-secondary" id="recalc-btn">条件を変えて再計算</button>
+
+      <p class="disclaimer">
+        ※本ツールの計算結果は簡易的な概算です。実際の残業代・手取り額は勤務先の制度や割増率、他の手当との合算により異なります。
+      </p>
+
+      <section class="faq" aria-label="よくある質問">
+        <h2 class="section-heading">よくある質問</h2>
+
+        <div class="faq__item">
+          <h3 class="faq__question">残業単価はどうやって調べればいいですか?</h3>
+          <p class="faq__answer">多くの場合、給与明細に記載されている「時間外手当」の単価をそのまま入力すれば計算できます。基本給から自動で割増賃金を算出したい場合は、準備中の「AI残業単価ラボ」の公開をお待ちください。</p>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__question">深夜残業や休日出勤の割増分も計算できますか?</h3>
+          <p class="faq__answer">現在のバージョンでは通常の残業単価のみに対応しています。深夜(25%増)や休日出勤(35%増)など割増率が異なるケースの個別計算は、今後のアップデートで対応を検討しています。</p>
+        </div>
+
+        <div class="faq__item">
+          <h3 class="faq__question">概算手取りの精度はどれくらいですか?</h3>
+          <p class="faq__answer">本ツールの概算手取りは、一律の概算控除率を使った簡易計算です。実際の手取りは基本給や扶養状況によって変わるため、より正確な年間の手取りを知りたい場合は「AI手取りラボ」の利用をおすすめします。</p>
+        </div>
+      </section>
+
+      <div class="ad-slot ad-slot--bottom" data-ad-position="bottom" aria-hidden="true"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>AI社員研究所 &mdash; AI社員002「AI残業代ラボ」v1.0</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
