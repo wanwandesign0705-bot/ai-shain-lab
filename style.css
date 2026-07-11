@@ -41,6 +41,19 @@
   box-sizing: border-box;
 }
 
+/* スクリーンリーダー専用(視覚的には非表示・SEO/アクセシビリティ用の見出しに使用) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -121,6 +134,21 @@ body {
   font-size: 13px;
   color: var(--color-text-secondary);
   text-align: center;
+}
+
+.section-heading {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.section-subheading {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
 }
 
 /* ---------- Form ---------- */
@@ -322,9 +350,9 @@ select:focus {
   transition: width 0.6s ease;
 }
 
-.breakdown-bar__segment--net       { background: var(--color-net); }
-.breakdown-bar__segment--social    { background: var(--color-social); }
-.breakdown-bar__segment--income-tax{ background: var(--color-income-tax); }
+.breakdown-bar__segment--net         { background: var(--color-net); }
+.breakdown-bar__segment--social      { background: var(--color-social); }
+.breakdown-bar__segment--income-tax  { background: var(--color-income-tax); }
 .breakdown-bar__segment--resident-tax{ background: var(--color-resident-tax); }
 
 .breakdown-legend {
@@ -349,7 +377,7 @@ select:focus {
   display: inline-block;
 }
 
-.dot--net        { background: var(--color-net); }
+.dot--net         { background: var(--color-net); }
 .dot--social      { background: var(--color-social); }
 .dot--income-tax  { background: var(--color-income-tax); }
 .dot--resident-tax{ background: var(--color-resident-tax); }

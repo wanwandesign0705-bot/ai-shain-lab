@@ -1,6 +1,6 @@
 /* ============================================
-   AI手取りラボ - script.js
-   MVP版: 計算ロジックは簡易的な仮実装です。
+   AI手取りラボ - script.js (v1.0)
+   計算ロジックは簡易的な仮実装です。
    実際の税額・保険料は勤務先や自治体により異なります。
    ============================================ */
 
@@ -129,7 +129,14 @@ function onSubmit(event) {
 
   const prefecture = PREFECTURES[prefIndex];
   const inputs = { income, age, dependents, prefecture };
-  const result = calculateTedori(inputs);
+
+  let result;
+  try {
+    result = calculateTedori(inputs);
+  } catch {
+    showFormError(["入力値の計算中にエラーが発生しました。値を見直してもう一度お試しください。"]);
+    return;
+  }
 
   renderResult(result, inputs);
 
@@ -185,7 +192,25 @@ function onRecalc() {
 }
 
 /* ---------- 計算ロジック(簡易仮実装) ---------- */
+/**
+ * 年収・年齢・扶養人数・都道府県から、手取り額の概算を計算する。
+ * 計算ロジックはすべて簡易的な仮実装(概算値)。
+ * @param {{income:number, age:number, dependents:number, prefecture:{name:string, healthRate:number}}} inputs
+ * @returns {object} 手取り額・各種控除額を含む計算結果オブジェクト
+ * @throws {Error} 入力値が不正(NaN/Infinity/範囲外)な場合
+ */
 function calculateTedori({ income, age, dependents, prefecture }) {
+  // 防御的ガード: 呼び出し元のバリデーションを通過していても、
+  // 万一不正な値が渡された場合にNaN・Infinityを画面に表示しないための最終防波堤
+  if (
+    !Number.isFinite(income) || income <= 0 ||
+    !Number.isFinite(age) ||
+    !Number.isFinite(dependents) ||
+    !prefecture || !Number.isFinite(prefecture.healthRate)
+  ) {
+    throw new Error("calculateTedori: 不正な入力値です");
+  }
+
   const grossAnnual = income * 10000; // 万円 -> 円
 
   /* 社会保険料(年間) */
@@ -293,10 +318,14 @@ function renderResult(result, inputs) {
   setText("ai-comment-text", generateAiComment(result, inputs));
 }
 
-/* ---------- AI社員コメント(ルールベースの簡易実装) ----------
-   将来的に条件を増やす場合は、この関数内の分岐を追加していく想定。
-   現時点では外部APIは呼ばず、計算結果に応じた定型コメントを返す。
-------------------------------------------------------------- */
+/**
+ * 計算結果に応じたAI社員コメントを生成する(ルールベースの簡易実装)。
+ * 外部APIは呼ばず、条件分岐で定型文を出し分ける。最大2件まで結合して返す。
+ * 将来的に条件を増やす場合は、この関数内の分岐を追加していく想定。
+ * @param {object} result calculateTedoriの戻り値
+ * @param {{income:number, age:number, dependents:number}} inputs
+ * @returns {string} 表示用コメント文字列
+ */
 function generateAiComment(result, inputs) {
   const comments = [];
 

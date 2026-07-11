@@ -1,31 +1,59 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta name="google-site-verification" content="8BR37qLRUB-Cf3v3A_Utgl869FnNgGNA-HTlDIKBg_E" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI手取りラボ | 年収から手取りを3秒で計算</title>
 <meta name="description" content="年収・年齢・都道府県・扶養人数を入れるだけで、月の手取りと年間の手取りをAIが即計算する無料ツールです。">
 
+<!-- favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
 <!-- canonical
-     TODO: 本番ドメイン確定後に URL を差し替える(現在は仮ドメイン) -->
-<link rel="canonical" href="https://ai-shain-lab.com/tools/001-tedori-lab/">
+     NOTE: GitHub Pages公開URLに更新済み。実際のorganization/repository名が
+     下記と異なる場合は、AI社員006(DevOps)に確認のうえ差し替えてください。 -->
+<link rel="canonical" href="https://ai-shain-lab.github.io/ai-shain-lab/tools/001-tedori-lab/">
 
 <!-- OGP (Facebook / LINE 等)
-     TODO: og-image.png を実際に用意してパスを差し替える -->
+     TODO: og-image.png(1200x630)を用意してパスを差し替える -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AI社員研究所">
 <meta property="og:title" content="AI手取りラボ | 年収から手取りを3秒で計算">
 <meta property="og:description" content="年収・年齢・都道府県・扶養人数を入れるだけで、月の手取りと年間の手取りをAIが即計算する無料ツールです。">
-<meta property="og:url" content="https://ai-shain-lab.com/tools/001-tedori-lab/">
-<meta property="og:image" content="https://ai-shain-lab.com/tools/001-tedori-lab/og-image.png">
+<meta property="og:url" content="https://ai-shain-lab.github.io/ai-shain-lab/tools/001-tedori-lab/">
+<meta property="og:image" content="https://ai-shain-lab.github.io/ai-shain-lab/tools/001-tedori-lab/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:locale" content="ja_JP">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AI手取りラボ | 年収から手取りを3秒で計算">
 <meta name="twitter:description" content="年収・年齢・都道府県・扶養人数を入れるだけで、月の手取りと年間の手取りをAIが即計算する無料ツールです。">
-<meta name="twitter:image" content="https://ai-shain-lab.com/tools/001-tedori-lab/og-image.png">
+<meta name="twitter:image" content="https://ai-shain-lab.github.io/ai-shain-lab/tools/001-tedori-lab/og-image.png">
+
+<!-- 構造化データ(JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AI手取りラボ",
+  "url": "https://ai-shain-lab.github.io/ai-shain-lab/tools/001-tedori-lab/",
+  "description": "年収・年齢・都道府県・扶養人数を入れるだけで、月の手取りと年間の手取りを計算する無料ツール。",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+  },
+  "inLanguage": "ja",
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI社員研究所"
+  }
+}
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -44,13 +72,14 @@
   <main class="main">
 
     <section class="card card--form" id="form-section">
+      <h2 class="section-heading">年収から手取りを計算する</h2>
       <p class="card__lead">3つ入力するだけ。登録もログインも不要です。</p>
 
       <form id="tedori-form" novalidate>
 
         <div class="field">
           <label for="income">年収(額面・万円)</label>
-          <input type="number" id="income" name="income" inputmode="numeric" placeholder="450" min="0" required>
+          <input type="number" id="income" name="income" inputmode="numeric" placeholder="450" min="1" max="100000" required>
         </div>
 
         <div class="field-row">
@@ -80,6 +109,7 @@
     </section>
 
     <section class="card card--result" id="result-section" hidden>
+      <h2 class="sr-only">計算結果</h2>
 
       <div class="result-headline">
         <p class="result-headline__label">あなたの手取り(月)</p>
@@ -98,6 +128,7 @@
         </div>
       </div>
 
+      <h3 class="sr-only">手取りと控除の内訳</h3>
       <div class="breakdown-bar" id="breakdown-bar" role="img" aria-label="手取りと控除の内訳バー">
         <div class="breakdown-bar__segment breakdown-bar__segment--net" id="bar-net"></div>
         <div class="breakdown-bar__segment breakdown-bar__segment--social" id="bar-social"></div>
@@ -112,6 +143,7 @@
       </div>
 
       <div class="detail-list">
+        <h3 class="section-subheading">保険料・税金の内訳(年間)</h3>
         <div class="detail-row">
           <span class="detail-row__label">健康保険(年間)</span>
           <span class="detail-row__value"><span id="d-health">0</span> 万円</span>
@@ -135,7 +167,7 @@
       </div>
 
       <div class="ai-comment" id="ai-comment">
-        <p class="ai-comment__label">AI社員からの一言</p>
+        <h3 class="ai-comment__label">AI社員からの一言</h3>
         <p class="ai-comment__text" id="ai-comment-text"></p>
       </div>
 
@@ -149,7 +181,7 @@
   </main>
 
   <footer class="footer">
-    <p>AI社員研究所 &mdash; AI社員001「AI手取りラボ」(MVP版)</p>
+    <p>AI社員研究所 &mdash; AI社員001「AI手取りラボ」v1.0</p>
   </footer>
 
   <script src="script.js"></script>
