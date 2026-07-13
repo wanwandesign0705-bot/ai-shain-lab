@@ -41,10 +41,7 @@
 }
 </script>
 
-<!-- 構造化データ(JSON-LD): 公開中ツール一覧
-     NOTE: AI手取りラボは現在フォルダ移動中のため一時的に除外しています。
-     tools/001-tedori-lab/ への正式な移動が完了し、正しいURLが確定した時点で
-     ListItemとして追加してください（position番号もあわせて見直すこと）。 -->
+<!-- 構造化データ(JSON-LD): 公開中ツール一覧 -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -53,6 +50,12 @@
     {
       "@type": "ListItem",
       "position": 1,
+      "name": "AI手取りラボ",
+      "url": "https://wanwandesign0705-bot.github.io/ai-shain-lab/tools/001-tedori-lab/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
       "name": "AI残業代ラボ",
       "url": "https://wanwandesign0705-bot.github.io/ai-shain-lab/tools/002-zangyodai-lab/"
     }
@@ -96,15 +99,14 @@
 
       <ul class="tool-list">
         <li>
-          <!-- AI手取りラボ: フォルダ移動作業中のため、リンク切れ防止で一時的に準備中表示 -->
-          <div class="tool-card__link tool-card__link--disabled" aria-disabled="true">
+          <a class="tool-card__link" href="tools/001-tedori-lab/">
             <span class="tool-card__icon" aria-hidden="true">手</span>
             <span class="tool-card__body">
               <span class="tool-card__name">AI手取りラボ</span>
               <span class="tool-card__desc">年収から手取りを3秒で計算</span>
             </span>
-            <span class="tool-card__badge">準備中</span>
-          </div>
+            <span class="tool-card__cta">使ってみる →</span>
+          </a>
         </li>
         <li>
           <a class="tool-card__link" href="tools/002-zangyodai-lab/">
