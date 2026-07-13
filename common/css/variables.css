@@ -1,0 +1,34 @@
+/* ============================================
+   common/css/variables.css
+   全ツール共通のカラー・フォント・レイアウトトークン。
+   AI手取りラボ/AI残業代ラボと同じ値を採用し、ブランドの統一感を保つ。
+   ============================================ */
+
+:root {
+  /* Color */
+  --color-bg: #F4F6F5;
+  --color-surface: #FFFFFF;
+  --color-surface-sunken: #EEF1F0;
+  --color-text-primary: #14181A;
+  --color-text-secondary: #5B6560;
+  --color-text-muted: #8B948F;
+  --color-border: #DDE3E0;
+
+  --color-accent: #0F6E56;       /* ティール(信頼・落ち着き) */
+  --color-accent-dark: #0A4E3D;
+  --color-accent-bg: #E4F1EC;
+
+  --color-indigo: #2B3A67;       /* 見出し等のアクセント差し色 */
+
+  --color-error: #B3261E;
+  --color-error-bg: #FBEAE9;
+
+  /* Type */
+  --font-sans: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", system-ui, -apple-system, sans-serif;
+  --font-num: "Roboto Mono", "SF Mono", "Hiragino Sans", monospace;
+
+  /* Layout */
+  --radius-card: 16px;
+  --radius-control: 10px;
+  --max-width: 480px;
+}
