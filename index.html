@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI社員研究所 | 登録不要・入力最小の無料ツール集</title>
+<meta name="description" content="AI社員研究所は、登録不要・入力最小で使える無料ツールを提供しています。AI手取りラボ、AI残業代ラボなど、面倒な計算を3秒で終わらせます。">
+
+<!-- favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<!-- canonical -->
+<link rel="canonical" href="https://wanwandesign0705-bot.github.io/ai-shain-lab/">
+
+<!-- OGP (Facebook / LINE 等)
+     TODO: og-image.png(1200x630)を用意してパスを差し替える -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI社員研究所">
+<meta property="og:title" content="AI社員研究所 | 登録不要・入力最小の無料ツール集">
+<meta property="og:description" content="AI社員研究所は、登録不要・入力最小で使える無料ツールを提供しています。AI手取りラボ、AI残業代ラボなど、面倒な計算を3秒で終わらせます。">
+<meta property="og:url" content="https://wanwandesign0705-bot.github.io/ai-shain-lab/">
+<meta property="og:image" content="https://wanwandesign0705-bot.github.io/ai-shain-lab/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI社員研究所 | 登録不要・入力最小の無料ツール集">
+<meta name="twitter:description" content="AI社員研究所は、登録不要・入力最小で使える無料ツールを提供しています。AI手取りラボ、AI残業代ラボなど、面倒な計算を3秒で終わらせます。">
+<meta name="twitter:image" content="https://wanwandesign0705-bot.github.io/ai-shain-lab/og-image.png">
+
+<!-- 構造化データ(JSON-LD): 組織情報 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AI社員研究所",
+  "url": "https://wanwandesign0705-bot.github.io/ai-shain-lab/",
+  "description": "登録不要・入力最小で使える無料ツールを提供するAI社員研究所。"
+}
+</script>
+
+<!-- 構造化データ(JSON-LD): 公開中ツール一覧
+     NOTE: AI手取りラボは現在フォルダ移動中のため一時的に除外しています。
+     tools/001-tedori-lab/ への正式な移動が完了し、正しいURLが確定した時点で
+     ListItemとして追加してください（position番号もあわせて見直すこと）。 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "AI残業代ラボ",
+      "url": "https://wanwandesign0705-bot.github.io/ai-shain-lab/tools/002-zangyodai-lab/"
+    }
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="common/css/reset.css">
+<link rel="stylesheet" href="common/css/variables.css">
+<link rel="stylesheet" href="common/css/base.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <span class="header__mark" aria-hidden="true">研</span>
+      <p class="header__title">AI社員研究所</p>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section class="hero">
+      <div class="hero__badges">
+        <span class="hero__badge">登録不要</span>
+        <span class="hero__badge">無料</span>
+        <span class="hero__badge">3秒で使える</span>
+      </div>
+      <h1 class="hero__title">面倒な計算を、3秒で。</h1>
+      <p class="hero__desc">
+        AI社員たちが、日々の「ちょっと面倒」をなくすための無料ツールを作っています。<br>
+        登録不要・入力は最小限。思いついたら、すぐ使えます。
+      </p>
+    </section>
+
+    <div class="ad-slot ad-slot--top" data-ad-position="top" aria-hidden="true"></div>
+
+    <section class="card" aria-label="公開中のツール">
+      <h2 class="section-heading">公開中のツール</h2>
+
+      <ul class="tool-list">
+        <li>
+          <!-- AI手取りラボ: フォルダ移動作業中のため、リンク切れ防止で一時的に準備中表示 -->
+          <div class="tool-card__link tool-card__link--disabled" aria-disabled="true">
+            <span class="tool-card__icon" aria-hidden="true">手</span>
+            <span class="tool-card__body">
+              <span class="tool-card__name">AI手取りラボ</span>
+              <span class="tool-card__desc">年収から手取りを3秒で計算</span>
+            </span>
+            <span class="tool-card__badge">準備中</span>
+          </div>
+        </li>
+        <li>
+          <a class="tool-card__link" href="tools/002-zangyodai-lab/">
+            <span class="tool-card__icon" aria-hidden="true">残</span>
+            <span class="tool-card__body">
+              <span class="tool-card__name">AI残業代ラボ</span>
+              <span class="tool-card__desc">残業時間から残業代を3秒で計算</span>
+            </span>
+            <span class="tool-card__cta">使ってみる →</span>
+          </a>
+        </li>
+      </ul>
+
+      <p class="tool-list__note">新しいツールは毎月追加しています。</p>
+    </section>
+
+    <section class="card" aria-label="公開予定のツール">
+      <h2 class="section-heading">公開予定のツール(Coming Soon)</h2>
+
+      <ul class="coming-soon">
+        <li class="coming-soon__item">
+          <span class="coming-soon__badge">準備中</span>
+          <span class="coming-soon__name">AI住民税ラボ</span>
+          <span class="coming-soon__label">近日公開</span>
+        </li>
+        <li class="coming-soon__item">
+          <span class="coming-soon__badge">準備中</span>
+          <span class="coming-soon__name">AI時給ラボ</span>
+          <span class="coming-soon__label">近日公開</span>
+        </li>
+        <li class="coming-soon__item">
+          <span class="coming-soon__badge">準備中</span>
+          <span class="coming-soon__name">AIボーナスラボ</span>
+          <span class="coming-soon__label">近日公開</span>
+        </li>
+      </ul>
+    </section>
+
+    <div class="ad-slot ad-slot--bottom" data-ad-position="bottom" aria-hidden="true"></div>
+
+  </main>
+
+  <footer class="footer">
+    <nav class="footer-links" aria-label="サイト情報">
+      <button type="button" class="link-button" data-footer-note="運営者情報ページは現在準備中です。近日公開予定です。">運営者情報</button>
+      <button type="button" class="link-button" data-footer-note="プライバシーポリシーページは現在準備中です。近日公開予定です。">プライバシーポリシー</button>
+      <button type="button" class="link-button" data-footer-note="お問い合わせページは現在準備中です。近日公開予定です。">お問い合わせ</button>
+    </nav>
+    <p class="link-note" id="footer-note" role="status" hidden></p>
+    <p class="footer__copyright">&copy; AI社員研究所</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
