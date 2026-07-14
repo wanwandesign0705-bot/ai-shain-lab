@@ -1,0 +1,69 @@
+/* ============================================
+   AI社員研究所 プライバシーポリシーページ - style.css (v1.0)
+   common/css(reset/variables/base)を前提としたページ固有スタイルのみを記述。
+   ============================================ */
+
+/* ---------- ページ見出し ---------- */
+
+.privacy-hero {
+    text-align: center;
+    padding: 8px 4px 4px;
+  }
+  
+  .privacy-hero__title {
+    margin: 0 0 10px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--color-text-primary);
+  }
+  
+  .privacy-hero__desc {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+  
+  /* ---------- 本文セクション ---------- */
+  
+  .privacy-section {
+    padding: 20px 20px;
+  }
+  
+  .privacy-section__heading {
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    text-align: left;
+  }
+  
+  .privacy-section__text {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+  }
+  
+  .privacy-section--meta {
+    background: var(--color-accent-bg);
+    border-color: var(--color-accent-bg);
+  }
+  
+  .privacy-section--meta .privacy-section__heading,
+  .privacy-section--meta .privacy-section__text {
+    color: var(--color-accent-dark);
+  }
+  
+  /* ---------- フッター(このページ専用: 戻るリンク+コピーライトのみ) ---------- */
+  
+  .footer__back {
+    margin: 0 0 10px;
+  }
+  
+  .back-link {
+    font-size: 12px;
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
