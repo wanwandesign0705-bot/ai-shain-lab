@@ -1,0 +1,117 @@
+/* ============================================
+   AI社員研究所 お問い合わせページ - style.css (v1.0)
+   common/css(reset/variables/base)を前提としたページ固有スタイルのみを記述。
+   ============================================ */
+
+/* ---------- ページ見出し ---------- */
+
+.contact-hero {
+    text-align: center;
+    padding: 8px 4px 4px;
+  }
+  
+  .contact-hero__title {
+    margin: 0 0 10px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--color-text-primary);
+  }
+  
+  .contact-hero__desc {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+  
+  /* ---------- 本文セクション共通 ---------- */
+  
+  .contact-section {
+    padding: 20px 20px;
+  }
+  
+  .contact-section__heading {
+    margin: 0 0 14px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    text-align: left;
+  }
+  
+  .contact-section__text {
+    margin: 0 0 16px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+  }
+  
+  /* ---------- お問い合わせ内容の例 ---------- */
+  
+  .contact-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .contact-examples__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    padding: 10px 12px;
+    background: var(--color-surface-sunken);
+    border-radius: var(--radius-control);
+  }
+  
+  .contact-examples__icon {
+    flex-shrink: 0;
+    font-size: 16px;
+  }
+  
+  .contact-examples__text {
+    color: var(--color-text-primary);
+  }
+  
+  /* ---------- フォーム誘導ボタン ---------- */
+  
+  .contact-section--cta {
+    text-align: center;
+  }
+  
+  .contact-section--cta .contact-section__heading,
+  .contact-section--cta .contact-section__text {
+    text-align: center;
+  }
+  
+  .contact-form-btn {
+    display: inline-block;
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
+    background: var(--color-accent);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-control);
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .contact-form-btn:active {
+    background: var(--color-accent-dark);
+  }
+  
+  /* ---------- フッター(戻るリンク+コピーライトのみ) ---------- */
+  
+  .footer__back {
+    margin: 0 0 10px;
+  }
+  
+  .back-link {
+    font-size: 12px;
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
