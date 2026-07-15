@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI手取りラボ | 年収から手取りを3秒で計算</title>
-<meta name="description" content="年収・年齢・都道府県・扶養人数を入れるだけで、月の手取りと年間の手取りをAIが即計算する無料ツールです。">
+<meta name="description" content="年収・年齢・扶養人数・都道府県から、月と年間の手取り額を無料で概算できます。社会保険料や税金の内訳、計算の前提、よくある質問も分かりやすく解説します。">
 
 <!-- favicon -->
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -12,7 +12,7 @@
 <!-- canonical
      NOTE: GitHub Pages公開URLに更新済み。実際のorganization/repository名が
      下記と異なる場合は、AI社員006(DevOps)に確認のうえ差し替えてください。 -->
-<link rel="canonical" href="https://ai-shain-lab.github.io/ai-shain-lab/tools/001-tedori-lab/">
+<link rel="canonical" href="https://wanwandesign0705-bot.github.io/ai-shain-lab/tools/001-tedori-lab/">
 
 <!-- OGP (Facebook / LINE 等)
      TODO: og-image.png(1200x630)を用意してパスを差し替える -->
@@ -20,8 +20,8 @@
 <meta property="og:site_name" content="AI社員研究所">
 <meta property="og:title" content="AI手取りラボ | 年収から手取りを3秒で計算">
 <meta property="og:description" content="年収・年齢・都道府県・扶養人数を入れるだけで、月の手取りと年間の手取りをAIが即計算する無料ツールです。">
-<meta property="og:url" content="https://ai-shain-lab.github.io/ai-shain-lab/tools/001-tedori-lab/">
-<meta property="og:image" content="https://ai-shain-lab.github.io/ai-shain-lab/tools/001-tedori-lab/og-image.png">
+<meta property="og:url" content="https://wanwandesign0705-bot.github.io/ai-shain-lab/tools/001-tedori-lab/">
+<meta property="og:image" content="https://wanwandesign0705-bot.github.io/ai-shain-lab/tools/001-tedori-lab/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="ja_JP">
@@ -30,15 +30,15 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AI手取りラボ | 年収から手取りを3秒で計算">
 <meta name="twitter:description" content="年収・年齢・都道府県・扶養人数を入れるだけで、月の手取りと年間の手取りをAIが即計算する無料ツールです。">
-<meta name="twitter:image" content="https://ai-shain-lab.github.io/ai-shain-lab/tools/001-tedori-lab/og-image.png">
+<meta name="twitter:image" content="https://wanwandesign0705-bot.github.io/ai-shain-lab/tools/001-tedori-lab/og-image.png">
 
-<!-- 構造化データ(JSON-LD) -->
+<!-- 構造化データ(JSON-LD): アプリ情報 -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "AI手取りラボ",
-  "url": "https://ai-shain-lab.github.io/ai-shain-lab/tools/001-tedori-lab/",
+  "url": "https://wanwandesign0705-bot.github.io/ai-shain-lab/tools/001-tedori-lab/",
   "description": "年収・年齢・都道府県・扶養人数を入れるだけで、月の手取りと年間の手取りを計算する無料ツール。",
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Any",
@@ -52,6 +52,66 @@
     "@type": "Organization",
     "name": "AI社員研究所"
   }
+}
+</script>
+
+<!-- 構造化データ(JSON-LD): よくある質問(FAQPage)
+     NOTE: 以下のQ&Aテキストは、本文のFAQセクション(id="faq")と完全に同一内容にすること。
+     文言を変更する場合は、必ず両方を同時に更新すること。 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "額面とは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "額面とは、社会保険料や税金が差し引かれる前の年収のことです。求人票に書かれている年収は、多くの場合この額面の金額です。実際に受け取る「手取り」は、ここから社会保険料や税金を引いた金額になります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "手取り率とは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "手取り率とは、額面年収のうち実際に受け取れる手取り額の割合です。一般的な会社員の場合、おおむね75〜85%程度になることが多いですが、年収や家族構成、お住まいの地域によって変わります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "賞与(ボーナス)は含まれる？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "本ツールは、賞与を含めた1年間の年収額面をまとめて入力する想定です。月給と賞与を分けて計算する機能はないため、賞与がある方は、月給と賞与を合計した年収額面を入力してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "副業収入はどう扱う？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "本ツールは、会社からの給与収入のみを前提に計算しています。副業による収入は含まれていないため、副業がある方の正確な手取りは、確定申告等を踏まえて別途ご確認ください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "都道府県によって金額は違う？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、異なります。主に健康保険料の料率が都道府県ごとに違うため、同じ年収でも手取り額に差が出ることがあります。住民税率はおおむね全国一律として概算しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "扶養人数によって変わる？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、変わります。扶養人数が多いほど、所得税・住民税の控除額が増えるため、同じ年収でも手取り額は多くなる傾向があります。"
+      }
+    }
+  ]
 }
 </script>
 
@@ -178,10 +238,211 @@
       </p>
     </section>
 
+    <!-- ここから追加セクション(Mission007: v1.1情報拡充) -->
+
+    <section class="card card--info" id="about-tool" aria-labelledby="about-tool-heading">
+      <h2 class="section-heading" id="about-tool-heading">このツールで分かること</h2>
+
+      <div class="info-block">
+        <h3 class="info-block__heading">どんな人向けか</h3>
+        <p class="info-block__text">
+          就職・転職・年収交渉などの場面で、「結局、手取りはいくらになるのか」を素早く知りたい方向けのツールです。
+        </p>
+      </div>
+
+      <div class="info-block">
+        <h3 class="info-block__heading">どんな時に使えるか</h3>
+        <p class="info-block__text">
+          求人票に書かれた年収(額面)を見たとき、昇給や賞与の金額が決まったとき、
+          家計や資金計画を立てるときなど、「額面から手取りを概算したい」場面で活用できます。
+        </p>
+      </div>
+
+      <div class="info-block">
+        <h3 class="info-block__heading">何が計算されるか</h3>
+        <p class="info-block__text">
+          年収(額面)・年齢・扶養人数・都道府県から、社会保険料(健康保険・厚生年金・雇用保険)と
+          所得税・住民税の概算を差し引いた「月の手取り」「年間の手取り」「手取り率」が分かります。
+        </p>
+      </div>
+    </section>
+
+    <section class="card card--info" id="assumptions" aria-labelledby="assumptions-heading">
+      <h2 class="section-heading" id="assumptions-heading">計算の前提</h2>
+      <ul class="assumptions-list">
+        <li class="assumptions-list__item">
+          表示される金額はすべて<strong>概算</strong>です。実際の給与明細等の金額とは一致しない場合があります。
+        </li>
+        <li class="assumptions-list__item">
+          家族構成や各種控除の適用状況など、個人ごとの条件によって、実際の手取り額は変動します。
+        </li>
+        <li class="assumptions-list__item">
+          社会保険料率・税率は、法改正や制度改定によって変更されることがあります。本ツールの計算結果が
+          最新の制度を反映していない場合があります。
+        </li>
+        <li class="assumptions-list__item">
+          正確な金額を知りたい場合は、勤務先の給与明細をご確認いただくか、税理士・社会保険労務士等の
+          専門家にご相談ください。
+        </li>
+      </ul>
+    </section>
+
+    <section class="card card--faq" id="faq" aria-labelledby="faq-heading">
+      <h2 class="section-heading" id="faq-heading">よくある質問</h2>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <h3 class="faq-item__q">
+            <button
+              type="button"
+              class="faq-item__button"
+              aria-expanded="false"
+              aria-controls="faq-answer-1"
+              id="faq-question-1"
+            >
+              <span>額面とは？</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-item__answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
+            <p>
+              額面とは、社会保険料や税金が差し引かれる前の年収のことです。求人票に書かれている年収は、
+              多くの場合この額面の金額です。実際に受け取る「手取り」は、ここから社会保険料や税金を引いた金額になります。
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-item__q">
+            <button
+              type="button"
+              class="faq-item__button"
+              aria-expanded="false"
+              aria-controls="faq-answer-2"
+              id="faq-question-2"
+            >
+              <span>手取り率とは？</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-item__answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
+            <p>
+              手取り率とは、額面年収のうち実際に受け取れる手取り額の割合です。一般的な会社員の場合、
+              おおむね75〜85%程度になることが多いですが、年収や家族構成、お住まいの地域によって変わります。
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-item__q">
+            <button
+              type="button"
+              class="faq-item__button"
+              aria-expanded="false"
+              aria-controls="faq-answer-3"
+              id="faq-question-3"
+            >
+              <span>賞与(ボーナス)は含まれる？</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-item__answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
+            <p>
+              本ツールは、賞与を含めた1年間の年収額面をまとめて入力する想定です。月給と賞与を分けて
+              計算する機能はないため、賞与がある方は、月給と賞与を合計した年収額面を入力してください。
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-item__q">
+            <button
+              type="button"
+              class="faq-item__button"
+              aria-expanded="false"
+              aria-controls="faq-answer-4"
+              id="faq-question-4"
+            >
+              <span>副業収入はどう扱う？</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-item__answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
+            <p>
+              本ツールは、会社からの給与収入のみを前提に計算しています。副業による収入は含まれていないため、
+              副業がある方の正確な手取りは、確定申告等を踏まえて別途ご確認ください。
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-item__q">
+            <button
+              type="button"
+              class="faq-item__button"
+              aria-expanded="false"
+              aria-controls="faq-answer-5"
+              id="faq-question-5"
+            >
+              <span>都道府県によって金額は違う？</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-item__answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
+            <p>
+              はい、異なります。主に健康保険料の料率が都道府県ごとに違うため、同じ年収でも手取り額に
+              差が出ることがあります。住民税率はおおむね全国一律として概算しています。
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-item__q">
+            <button
+              type="button"
+              class="faq-item__button"
+              aria-expanded="false"
+              aria-controls="faq-answer-6"
+              id="faq-question-6"
+            >
+              <span>扶養人数によって変わる？</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-item__answer" id="faq-answer-6" role="region" aria-labelledby="faq-question-6">
+            <p>
+              はい、変わります。扶養人数が多いほど、所得税・住民税の控除額が増えるため、同じ年収でも
+              手取り額は多くなる傾向があります。
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="card card--related" id="related-tools" aria-labelledby="related-tools-heading">
+      <h2 class="section-heading" id="related-tools-heading">関連ツール</h2>
+      <ul class="related-tool-list">
+        <li>
+          <a class="related-tool-card" href="../002-zangyodai-lab/">
+            <span class="related-tool-card__icon" aria-hidden="true">残</span>
+            <span class="related-tool-card__body">
+              <span class="related-tool-card__name">AI残業代ラボ</span>
+              <span class="related-tool-card__desc">残業時間から残業代を3秒で計算</span>
+            </span>
+            <span class="related-tool-card__cta">使ってみる →</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 追加セクションここまで -->
+
   </main>
 
   <footer class="footer">
-    <p>AI社員研究所 &mdash; AI社員001「AI手取りラボ」v1.0</p>
+    <p>&copy; AI社員研究所</p>
   </footer>
 
   <script src="script.js"></script>
