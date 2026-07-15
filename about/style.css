@@ -1,0 +1,110 @@
+/* ============================================
+   AI社員研究所 運営者情報ページ - style.css (v1.0)
+   common/css(reset/variables/base)を前提としたページ固有スタイルのみを記述。
+   ============================================ */
+
+/* ---------- ページ見出し ---------- */
+
+.about-hero {
+    text-align: center;
+    padding: 8px 4px 4px;
+  }
+  
+  .about-hero__title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--color-text-primary);
+  }
+  
+  /* ---------- 本文セクション共通 ---------- */
+  
+  .about-section {
+    padding: 20px 20px;
+  }
+  
+  .about-section__heading {
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    text-align: left;
+  }
+  
+  .about-section__text {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+  }
+  
+  /* ---------- 関連ページへの案内(カードUI) ---------- */
+  
+  .about-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .about-link-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-control);
+    padding: 14px;
+  }
+  
+  .about-link-card__icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+    background: var(--color-indigo);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+  }
+  
+  .about-link-card__body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .about-link-card__name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+  }
+  
+  .about-link-card__desc {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    margin-top: 2px;
+  }
+  
+  .about-link-card__cta {
+    flex-shrink: 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-accent);
+    white-space: nowrap;
+  }
+  
+  /* ---------- フッター(戻るリンク+コピーライトのみ) ---------- */
+  
+  .footer__back {
+    margin: 0 0 10px;
+  }
+  
+  .back-link {
+    font-size: 12px;
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
