@@ -205,3 +205,27 @@ function toManYen(yen) {
 function setText(id, value) {
   document.getElementById(id).textContent = value;
 }
+
+/* ============================================
+   ここから追加(Mission009: v1.1情報拡充)
+   FAQアコーディオンの開閉のみを担当。既存の計算処理には一切関与しない。
+   ============================================ */
+
+document.addEventListener("DOMContentLoaded", () => {
+  initFaqAccordion();
+});
+
+function initFaqAccordion() {
+  const buttons = document.querySelectorAll(".faq-item__button");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const answerId = button.getAttribute("aria-controls");
+      const answer = document.getElementById(answerId);
+      const isOpen = button.getAttribute("aria-expanded") === "true";
+
+      button.setAttribute("aria-expanded", String(!isOpen));
+      answer.classList.toggle("is-open", !isOpen);
+    });
+  });
+}

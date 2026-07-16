@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI残業代ラボ | 残業時間から残業代を3秒で計算</title>
-<meta name="description" content="残業時間と残業単価を入れるだけで、残業代の月額・年額・概算手取りをAIが即計算する無料ツールです。">
+<meta name="description" content="月の残業時間と残業単価から、残業代の月額・年額・概算手取りを無料で計算できます。固定残業代や割増率などの計算の前提、よくある質問も分かりやすく解説します。">
 
 <!-- favicon -->
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -55,8 +55,8 @@
 }
 </script>
 
-<!-- 構造化データ(JSON-LD): FAQ
-     NOTE: 内容は本文中のFAQセクションと完全に一致させること -->
+<!-- 構造化データ(JSON-LD): FAQ(既存・結果表示後の3問と対応)
+     NOTE: 内容は本文中の結果表示エリア内のFAQセクションと完全に一致させること -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -84,6 +84,66 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "本ツールの概算手取りは、一律の概算控除率を使った簡易計算です。実際の手取りは基本給や扶養状況によって変わるため、より正確な年間の手取りを知りたい場合は「AI手取りラボ」の利用をおすすめします。"
+      }
+    }
+  ]
+}
+</script>
+
+<!-- 構造化データ(JSON-LD): よくある質問(FAQPage・v1.1追加分)
+     NOTE: 以下のQ&Aテキストは、本文の新FAQセクション(id="faq-new")と完全に同一内容にすること。
+     文言を変更する場合は、必ず両方を同時に更新すること。 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "残業代とは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "残業代とは、法定労働時間を超えて働いた分に対して、通常の賃金に一定の割増率(一般的に25%以上)を掛けて支払われる賃金のことです。本ツールは、既に割増分を反映した「残業単価」をもとに、月々の残業代を計算します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "固定残業代とは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "固定残業代とは、あらかじめ一定時間分の残業代を給与に含めて支払う制度のことです。本ツールは固定残業代の有無を考慮していないため、固定残業代を導入している会社では、実際の受け取り額と計算結果が異なることがあります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "深夜残業はどうなる？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "22時から翌5時までの深夜労働には、通常の残業割増(25%)に加えて深夜割増(25%)が上乗せされ、合計で約50%増となるのが一般的です。本ツールは深夜割増を区別して計算していないため、深夜残業が多い場合、実際の金額より低めに見積もられる可能性があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "休日出勤はどうなる？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "法定休日の労働には35%以上の割増賃金が発生するのが一般的です。本ツールは休日出勤分を区別して計算していないため、休日出勤がある場合は、給与明細等で別途ご確認ください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "残業時間の端数はどう扱われる？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "会社によっては、1分単位・15分単位・30分単位など、残業時間の集計ルールが異なります。本ツールは入力された時間をそのまま計算に使用するため、給与明細の実際の集計ルールに合わせて入力してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "会社によって計算方法は違う？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、異なります。割増率の設定、固定残業代の有無、残業時間の端数処理のルールなどは会社によって違うため、正確な金額は給与明細や勤務先の就業規則をご確認ください。"
       }
     }
   ]
@@ -200,10 +260,212 @@
       <div class="ad-slot ad-slot--bottom" data-ad-position="bottom" aria-hidden="true"></div>
     </section>
 
+    <!-- ここから追加セクション(Mission009: v1.1情報拡充) -->
+
+    <section class="card card--info" id="about-tool" aria-labelledby="about-tool-heading">
+      <h2 class="section-heading" id="about-tool-heading">このツールで分かること</h2>
+
+      <div class="info-block">
+        <h3 class="info-block__heading">どんな人向けか</h3>
+        <p class="info-block__text">
+          残業代が実際にいくらになるのか、給与明細を見る前に概算を知りたい会社員の方向けのツールです。
+        </p>
+      </div>
+
+      <div class="info-block">
+        <h3 class="info-block__heading">どんな時に使えるか</h3>
+        <p class="info-block__text">
+          残業時間が多かった月の見込み額を確認したいとき、転職や給与交渉の判断材料にしたいとき、
+          家計の資金計画を立てるときなどに活用できます。
+        </p>
+      </div>
+
+      <div class="info-block">
+        <h3 class="info-block__heading">何が計算されるか</h3>
+        <p class="info-block__text">
+          月の残業時間と残業単価から、月の残業代(税引き前)・年間の残業代・概算手取り(年間・月あたり)が分かります。
+        </p>
+      </div>
+    </section>
+
+    <section class="card card--info" id="assumptions" aria-labelledby="assumptions-heading">
+      <h2 class="section-heading" id="assumptions-heading">計算の前提</h2>
+      <ul class="assumptions-list">
+        <li class="assumptions-list__item">
+          表示される金額はすべて<strong>概算</strong>です。
+        </li>
+        <li class="assumptions-list__item">
+          残業代の計算方法は会社ごとのルールにより異なるため、実際の金額とは差が生じる場合があります。
+        </li>
+        <li class="assumptions-list__item">
+          固定残業代や各種手当(役職手当・住宅手当等)は考慮していません。
+        </li>
+        <li class="assumptions-list__item">
+          正確な金額を知りたい場合は、給与明細をご確認いただくか、勤務先へお問い合わせください。
+        </li>
+      </ul>
+    </section>
+
+    <section class="card card--faq" id="faq-new" aria-labelledby="faq-new-heading">
+      <h2 class="section-heading" id="faq-new-heading">よくある質問</h2>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <h3 class="faq-item__q">
+            <button
+              type="button"
+              class="faq-item__button"
+              aria-expanded="false"
+              aria-controls="faq-new-answer-1"
+              id="faq-new-question-1"
+            >
+              <span>残業代とは？</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-item__answer" id="faq-new-answer-1" role="region" aria-labelledby="faq-new-question-1">
+            <p>
+              残業代とは、法定労働時間を超えて働いた分に対して、通常の賃金に一定の割増率(一般的に25%以上)を
+              掛けて支払われる賃金のことです。本ツールは、既に割増分を反映した「残業単価」をもとに、
+              月々の残業代を計算します。
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-item__q">
+            <button
+              type="button"
+              class="faq-item__button"
+              aria-expanded="false"
+              aria-controls="faq-new-answer-2"
+              id="faq-new-question-2"
+            >
+              <span>固定残業代とは？</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-item__answer" id="faq-new-answer-2" role="region" aria-labelledby="faq-new-question-2">
+            <p>
+              固定残業代とは、あらかじめ一定時間分の残業代を給与に含めて支払う制度のことです。本ツールは
+              固定残業代の有無を考慮していないため、固定残業代を導入している会社では、実際の受け取り額と
+              計算結果が異なることがあります。
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-item__q">
+            <button
+              type="button"
+              class="faq-item__button"
+              aria-expanded="false"
+              aria-controls="faq-new-answer-3"
+              id="faq-new-question-3"
+            >
+              <span>深夜残業はどうなる？</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-item__answer" id="faq-new-answer-3" role="region" aria-labelledby="faq-new-question-3">
+            <p>
+              22時から翌5時までの深夜労働には、通常の残業割増(25%)に加えて深夜割増(25%)が上乗せされ、
+              合計で約50%増となるのが一般的です。本ツールは深夜割増を区別して計算していないため、
+              深夜残業が多い場合、実際の金額より低めに見積もられる可能性があります。
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-item__q">
+            <button
+              type="button"
+              class="faq-item__button"
+              aria-expanded="false"
+              aria-controls="faq-new-answer-4"
+              id="faq-new-question-4"
+            >
+              <span>休日出勤はどうなる？</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-item__answer" id="faq-new-answer-4" role="region" aria-labelledby="faq-new-question-4">
+            <p>
+              法定休日の労働には35%以上の割増賃金が発生するのが一般的です。本ツールは休日出勤分を
+              区別して計算していないため、休日出勤がある場合は、給与明細等で別途ご確認ください。
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-item__q">
+            <button
+              type="button"
+              class="faq-item__button"
+              aria-expanded="false"
+              aria-controls="faq-new-answer-5"
+              id="faq-new-question-5"
+            >
+              <span>残業時間の端数はどう扱われる？</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-item__answer" id="faq-new-answer-5" role="region" aria-labelledby="faq-new-question-5">
+            <p>
+              会社によっては、1分単位・15分単位・30分単位など、残業時間の集計ルールが異なります。
+              本ツールは入力された時間をそのまま計算に使用するため、給与明細の実際の集計ルールに
+              合わせて入力してください。
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-item__q">
+            <button
+              type="button"
+              class="faq-item__button"
+              aria-expanded="false"
+              aria-controls="faq-new-answer-6"
+              id="faq-new-question-6"
+            >
+              <span>会社によって計算方法は違う？</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-item__answer" id="faq-new-answer-6" role="region" aria-labelledby="faq-new-question-6">
+            <p>
+              はい、異なります。割増率の設定、固定残業代の有無、残業時間の端数処理のルールなどは
+              会社によって違うため、正確な金額は給与明細や勤務先の就業規則をご確認ください。
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="card card--related" id="related-tools" aria-labelledby="related-tools-heading">
+      <h2 class="section-heading" id="related-tools-heading">関連ツール</h2>
+      <ul class="related-tool-list">
+        <li>
+          <a class="related-tool-card" href="../001-tedori-lab/">
+            <span class="related-tool-card__icon" aria-hidden="true">手</span>
+            <span class="related-tool-card__body">
+              <span class="related-tool-card__name">AI手取りラボ</span>
+              <span class="related-tool-card__desc">年収から手取りを3秒で計算</span>
+            </span>
+            <span class="related-tool-card__cta">使ってみる →</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 追加セクションここまで -->
+
   </main>
 
   <footer class="footer">
-    <p>AI社員研究所 &mdash; AI社員002「AI残業代ラボ」v1.0</p>
+    <p>AI社員研究所 &mdash; AI社員002「AI残業代ラボ」v1.1</p>
   </footer>
 
   <script src="script.js"></script>
