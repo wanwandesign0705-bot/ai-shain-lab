@@ -1,0 +1,45 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+
+  <!-- 右下の控えめなアクセント装飾(円) -->
+  <circle cx="1080" cy="560" r="260" fill="#0F6E56" opacity="0.06"/>
+  <circle cx="1150" cy="80" r="140" fill="#2B3A67" opacity="0.05"/>
+
+  <!-- ロゴマーク + サイト名(左上) -->
+  <rect x="80" y="72" width="64" height="64" rx="16" fill="#2B3A67"/>
+  <text x="112" y="116" font-family="Hiragino Sans, Noto Sans JP, sans-serif" font-size="30" font-weight="600" fill="#FFFFFF" text-anchor="middle">研</text>
+  <text x="160" y="115" font-family="Hiragino Sans, Noto Sans JP, sans-serif" font-size="30" font-weight="500" fill="#14181A">AI社員研究所</text>
+
+  <!-- バッジ3つ -->
+  <rect x="80" y="168" width="118" height="40" rx="20" fill="#E4F1EC"/>
+  <text x="139" y="194" font-family="Hiragino Sans, Noto Sans JP, sans-serif" font-size="18" font-weight="500" fill="#0A4E3D" text-anchor="middle">登録不要</text>
+
+  <rect x="210" y="168" width="86" height="40" rx="20" fill="#E4F1EC"/>
+  <text x="253" y="194" font-family="Hiragino Sans, Noto Sans JP, sans-serif" font-size="18" font-weight="500" fill="#0A4E3D" text-anchor="middle">無料</text>
+
+  <rect x="308" y="168" width="146" height="40" rx="20" fill="#E4F1EC"/>
+  <text x="381" y="194" font-family="Hiragino Sans, Noto Sans JP, sans-serif" font-size="18" font-weight="500" fill="#0A4E3D" text-anchor="middle">3秒で使える</text>
+
+  <!-- メインキャッチコピー -->
+  <text x="80" y="300" font-family="Hiragino Sans, Noto Sans JP, sans-serif" font-size="64" font-weight="600" fill="#14181A">面倒な計算を、</text>
+  <text x="80" y="380" font-family="Hiragino Sans, Noto Sans JP, sans-serif" font-size="64" font-weight="600" fill="#0F6E56">3秒で。</text>
+
+  <!-- 公開中ラベル -->
+  <text x="80" y="450" font-family="Hiragino Sans, Noto Sans JP, sans-serif" font-size="20" font-weight="500" fill="#8B948F">公開中のツール</text>
+
+  <!-- ツールカード: AI手取りラボ -->
+  <rect x="80" y="470" width="330" height="92" rx="16" fill="#EEF1F0" stroke="#DDE3E0" stroke-width="1.5"/>
+  <rect x="102" y="492" width="48" height="48" rx="12" fill="#2B3A67"/>
+  <text x="126" y="524" font-family="Hiragino Sans, Noto Sans JP, sans-serif" font-size="20" font-weight="500" fill="#FFFFFF" text-anchor="middle">手</text>
+  <text x="168" y="510" font-family="Hiragino Sans, Noto Sans JP, sans-serif" font-size="22" font-weight="500" fill="#14181A">AI手取りラボ</text>
+  <text x="168" y="538" font-family="Hiragino Sans, Noto Sans JP, sans-serif" font-size="16" fill="#5B6560">年収から手取りを3秒で計算</text>
+
+  <!-- ツールカード: AI残業代ラボ -->
+  <rect x="430" y="470" width="330" height="92" rx="16" fill="#EEF1F0" stroke="#DDE3E0" stroke-width="1.5"/>
+  <rect x="452" y="492" width="48" height="48" rx="12" fill="#2B3A67"/>
+  <text x="476" y="524" font-family="Hiragino Sans, Noto Sans JP, sans-serif" font-size="20" font-weight="500" fill="#FFFFFF" text-anchor="middle">残</text>
+  <text x="518" y="510" font-family="Hiragino Sans, Noto Sans JP, sans-serif" font-size="22" font-weight="500" fill="#14181A">AI残業代ラボ</text>
+  <text x="518" y="538" font-family="Hiragino Sans, Noto Sans JP, sans-serif" font-size="16" fill="#5B6560">残業時間から残業代を3秒で計算</text>
+
+</svg>
