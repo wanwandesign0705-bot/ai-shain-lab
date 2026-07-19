@@ -2,42 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://wanwandesign0705-bot.github.io/ai-shain-lab/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <loc>https://aishain-lab.jp/</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://wanwandesign0705-bot.github.io/ai-shain-lab/tools/001-tedori-lab/</loc>
+    <loc>https://aishain-lab.jp/tools/001-tedori-lab/</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://wanwandesign0705-bot.github.io/ai-shain-lab/tools/002-zangyodai-lab/</loc>
+    <loc>https://aishain-lab.jp/tools/002-zangyodai-lab/</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://wanwandesign0705-bot.github.io/ai-shain-lab/about/</loc>
+    <loc>https://aishain-lab.jp/tools/003-juminzei-lab/</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://aishain-lab.jp/about/</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://wanwandesign0705-bot.github.io/ai-shain-lab/privacy/</loc>
+    <loc>https://aishain-lab.jp/privacy/</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://wanwandesign0705-bot.github.io/ai-shain-lab/contact/</loc>
+    <loc>https://aishain-lab.jp/contact/</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
