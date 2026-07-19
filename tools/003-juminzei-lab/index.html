@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI住民税ラボ | 給与年収から住民税を概算(令和8年度対応)</title>
+<meta name="description" content="給与年収から、令和8年度の個人住民税(所得割・調整控除)を無料で概算できます。給与年収850万円以下の会社員向け。非課税判定は行いません。">
+
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="canonical" href="https://aishain-lab.jp/tools/003-juminzei-lab/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI社員研究所">
+<meta property="og:title" content="AI住民税ラボ | 給与年収から住民税を概算(令和8年度対応)">
+<meta property="og:description" content="給与年収から、令和8年度の個人住民税(所得割・調整控除)を無料で概算できます。">
+<meta property="og:url" content="https://aishain-lab.jp/tools/003-juminzei-lab/">
+<meta property="og:image" content="https://aishain-lab.jp/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI住民税ラボ | 給与年収から住民税を概算(令和8年度対応)">
+<meta name="twitter:description" content="給与年収から、令和8年度の個人住民税(所得割・調整控除)を無料で概算できます。">
+<meta name="twitter:image" content="https://aishain-lab.jp/og-image.png">
+
+<!-- Google AdSense(1ページ1回のみ) -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1213645304949565"
+     crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AI住民税ラボ",
+  "url": "https://aishain-lab.jp/tools/003-juminzei-lab/",
+  "description": "給与年収から、令和8年度の個人住民税(所得割・調整控除)を計算する無料ツール(給与年収850万円以下対応)。",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+  "inLanguage": "ja",
+  "publisher": { "@type": "Organization", "name": "AI社員研究所" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "AI社員研究所", "item": "https://aishain-lab.jp/" },
+    { "@type": "ListItem", "position": 2, "name": "AI住民税ラボ", "item": "https://aishain-lab.jp/tools/003-juminzei-lab/" }
+  ]
+}
+</script>
+
+
+<link rel="stylesheet" href="../../common/css/reset.css">
+<link rel="stylesheet" href="../../common/css/variables.css">
+<link rel="stylesheet" href="../../common/css/base.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <span class="header__mark" aria-hidden="true">住</span>
+      <div class="header__text">
+        <p class="header__brand">AI社員研究所</p>
+        <h1 class="header__title">AI住民税ラボ</h1>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item"><a href="../../">AI社員研究所</a></li>
+        <li class="breadcrumb__item" aria-current="page">AI住民税ラボ</li>
+      </ol>
+    </nav>
+
+    <section class="card card--form" id="form-section">
+      <h2 class="section-heading">給与年収から住民税を計算する</h2>
+      <p class="card__lead">
+        令和8年度の個人住民税(所得割・調整控除)を概算します。<br>
+        <strong>給与年収850万円以下の会社員</strong>を対象としています。
+      </p>
+
+      <form id="juminzei-form" novalidate>
+
+        <div class="field">
+          <label for="income">前年の給与年収(額面・万円)</label>
+          <input type="number" id="income" name="income" inputmode="numeric" placeholder="450" min="1" max="850" required>
+        </div>
+
+        <div class="field">
+          <label for="social-insurance">年間社会保険料(万円・任意)</label>
+          <input type="number" id="social-insurance" name="social-insurance" inputmode="numeric" placeholder="未入力の場合は概算します">
+          <p class="field-note">未入力の場合、給与年収の15%を仮の社会保険料として使用します。実際の金額は加入保険、年齢、地域、賞与等で異なります。</p>
+        </div>
+
+        <button type="button" class="btn-toggle" id="toggle-detail-btn" aria-expanded="false" aria-controls="detail-fields">
+          詳しく計算する(配偶者控除・扶養控除を追加) ＋
+        </button>
+
+        <div class="detail-fields" id="detail-fields" hidden>
+
+          <div class="field field--checkbox">
+            <label class="checkbox-label">
+              <input type="checkbox" id="spouse-check" name="spouse-check">
+              税法上の配偶者控除の対象であることを確認済み
+            </label>
+            <p class="field-note">
+              以下をすべて満たす場合にチェックしてください。<br>
+              ・民法上の配偶者であること(内縁関係は対象外)<br>
+              ・本人の合計所得金額が1,000万円以下であること<br>
+              ・配偶者の合計所得金額が58万円以下(給与収入のみの場合、年収123万円以下)であること
+            </p>
+          </div>
+
+          <div class="field field--checkbox" id="spouse-elderly-field" hidden>
+            <label class="checkbox-label">
+              <input type="checkbox" id="spouse-elderly-check" name="spouse-elderly-check">
+              配偶者は70歳以上である
+            </label>
+          </div>
+
+          <div class="field">
+            <label for="general-dependents">一般扶養親族の人数(16〜18歳・23〜69歳)</label>
+            <input type="number" id="general-dependents" name="general-dependents" inputmode="numeric" placeholder="0" min="0" max="10">
+          </div>
+
+          <div class="field">
+            <label for="specific-dependents">特定扶養親族の人数(19〜22歳)</label>
+            <input type="number" id="specific-dependents" name="specific-dependents" inputmode="numeric" placeholder="0" min="0" max="10">
+          </div>
+
+          <div class="field">
+            <label for="elderly-dependents">老人扶養親族(その他)の人数(70歳以上・別居等)</label>
+            <input type="number" id="elderly-dependents" name="elderly-dependents" inputmode="numeric" placeholder="0" min="0" max="10">
+          </div>
+
+          <div class="field">
+            <label for="elderly-cohabiting-dependents">老人扶養親族(同居老親等)の人数(70歳以上・同居)</label>
+            <input type="number" id="elderly-cohabiting-dependents" name="elderly-cohabiting-dependents" inputmode="numeric" placeholder="0" min="0" max="10">
+          </div>
+
+          <p class="field-note">
+            ※19〜22歳の親族で所得58万円超123万円以下の場合に適用される「特定親族特別控除」は、本ツールの初版では対象外です(今後対応予定)。
+          </p>
+        </div>
+
+        <p class="form-error" id="form-error" role="alert" hidden></p>
+
+        <button type="submit" class="btn-primary">住民税を計算する</button>
+        <p class="field-note">入力した内容はどこにも送信・保存されません。</p>
+      </form>
+    </section>
+
+    <section class="card card--result" id="result-section" hidden>
+      <h2 class="sr-only">計算結果</h2>
+
+      <div class="result-headline">
+        <p class="result-headline__label">所得割の概算</p>
+        <p class="result-headline__value"><span id="shotokuwari">0</span><span class="unit">円</span></p>
+        <p class="result-headline__sub" id="result-condition"></p>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <p class="stat-card__label">均等割(課税される場合の参考額)</p>
+          <p class="stat-card__value"><span id="kintouwari">4,000</span><span class="unit-sm">円</span></p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-card__label">森林環境税(課税される場合の参考額)</p>
+          <p class="stat-card__value"><span id="shinrin">1,000</span><span class="unit-sm">円</span></p>
+        </div>
+      </div>
+
+      <div class="highlight-block">
+        <p class="highlight-block__label">課税される場合の参考年額</p>
+        <p class="highlight-block__value"><span id="reference-annual">0</span><span class="unit-sm">円</span></p>
+        <p class="highlight-block__sub">(月額参考値: 約<span id="reference-monthly">0</span>円)</p>
+      </div>
+
+      <div class="notice-block">
+        <p>
+          均等割・森林環境税が非課税となる場合があります。本ツールでは自治体ごとの非課税判定を行わないため、
+          5,000円は課税される場合の参考額として表示しています。所得割の概算が0円の場合も、「非課税」とは表示していません。
+        </p>
+      </div>
+
+
+      <div class="notice-block" id="social-estimate-notice" hidden>
+        <p>
+          年間社会保険料が未入力のため、給与年収の15%を仮の社会保険料として使用しています。
+          実際の金額は加入保険、年齢、地域、賞与等で異なります。
+        </p>
+      </div>
+
+      <div class="detail-list">
+        <h3 class="section-subheading">計算過程の内訳</h3>
+        <div class="detail-row"><span class="detail-row__label">給与所得</span><span class="detail-row__value"><span id="d-salary-income">0</span> 円</span></div>
+        <div class="detail-row"><span class="detail-row__label">社会保険料控除</span><span class="detail-row__value"><span id="d-social-insurance">0</span> 円</span></div>
+        <div class="detail-row"><span class="detail-row__label">その他の所得控除</span><span class="detail-row__value"><span id="d-other-deduction">0</span> 円</span></div>
+        <div class="detail-row"><span class="detail-row__label">所得控除合計</span><span class="detail-row__value"><span id="d-deduction-total">0</span> 円</span></div>
+        <div class="detail-row"><span class="detail-row__label">課税所得</span><span class="detail-row__value"><span id="d-taxable-income">0</span> 円</span></div>
+        <div class="detail-row"><span class="detail-row__label">人的控除差の合計</span><span class="detail-row__value"><span id="d-personal-diff">0</span> 円</span></div>
+        <div class="detail-row"><span class="detail-row__label">調整控除</span><span class="detail-row__value"><span id="d-chosei">0</span> 円</span></div>
+      </div>
+
+      <div class="ai-comment" id="ai-comment">
+        <h3 class="ai-comment__label">AI社員からの一言</h3>
+        <p class="ai-comment__text" id="ai-comment-text"></p>
+      </div>
+
+      <button type="button" class="btn-secondary" id="recalc-btn">条件を変えて再計算</button>
+
+      <p class="disclaimer">
+        ※所得割は全国標準税率10%で概算しています。均等割・森林環境税は全国標準額(4,000円・1,000円)を、課税される場合の参考額として表示しています。
+        自治体独自の超過課税は含んでいません。非課税判定は行っていません。ふるさと納税・住宅ローン控除・医療費控除等、上記以外の控除は含んでいません。
+        特定親族特別控除は今後対応予定です。社会保険料が未入力の場合、給与年収の15%を仮の社会保険料として使用しています。実際の金額は加入保険、年齢、地域、賞与等で異なります。
+      </p>
+    </section>
+
+    <section class="card card--info" id="about-tool" aria-labelledby="about-tool-heading">
+      <h2 class="section-heading" id="about-tool-heading">このツールで分かること</h2>
+      <div class="info-block">
+        <h3 class="info-block__heading">対象範囲</h3>
+        <p class="info-block__text"><strong>給与年収850万円以下の会社員</strong>を対象とした、令和8年度個人住民税の所得割・調整控除の概算ツールです。850万円を超える場合に適用されることがある所得金額調整控除には対応していません。</p>
+      </div>
+      <div class="info-block">
+        <h3 class="info-block__heading">どんな時に使えるか</h3>
+        <p class="info-block__text">昇給が決まったとき、転職を検討しているとき、家計の年間支出を把握したいときなどに活用できます。</p>
+      </div>
+      <div class="info-block">
+        <h3 class="info-block__heading">何が計算されるか</h3>
+        <p class="info-block__text">給与年収・社会保険料・配偶者控除・扶養控除の入力内容から、所得割の概算と、均等割・森林環境税が課税される場合の参考年額が分かります。</p>
+      </div>
+    </section>
+
+    <section class="card card--info" id="assumptions" aria-labelledby="assumptions-heading">
+      <h2 class="section-heading" id="assumptions-heading">計算の前提・対象外の控除</h2>
+      <ul class="assumptions-list">
+        <li class="assumptions-list__item">表示される金額はすべて<strong>概算</strong>です。</li>
+        <li class="assumptions-list__item">給与年収850万円以下の会社員を対象としています。</li>
+        <li class="assumptions-list__item">対象外: ふるさと納税、住宅ローン控除、配当控除、医療費控除、生命保険料控除、地震保険料控除、配偶者特別控除、特定親族特別控除(今後対応予定)、障害者控除、寡婦控除、ひとり親控除、自治体独自の超過課税。</li>
+        <li class="assumptions-list__item">均等割・森林環境税の非課税判定は行いません。</li>
+        <li class="assumptions-list__item">正確な金額は、お住まいの自治体から送付される住民税納税通知書でご確認ください。</li>
+      </ul>
+    </section>
+
+    <section class="card card--related" id="related-tools" aria-labelledby="related-tools-heading">
+      <h2 class="section-heading" id="related-tools-heading">関連ツール</h2>
+      <ul class="related-tool-list">
+        <li>
+          <a class="related-tool-card" href="../001-tedori-lab/">
+            <span class="related-tool-card__icon" aria-hidden="true">手</span>
+            <span class="related-tool-card__body">
+              <span class="related-tool-card__name">AI手取りラボ</span>
+              <span class="related-tool-card__desc">年収から手取りを3秒で計算</span>
+            </span>
+            <span class="related-tool-card__cta">使ってみる →</span>
+          </a>
+        </li>
+        <li>
+          <a class="related-tool-card" href="../002-zangyodai-lab/">
+            <span class="related-tool-card__icon" aria-hidden="true">残</span>
+            <span class="related-tool-card__body">
+              <span class="related-tool-card__name">AI残業代ラボ</span>
+              <span class="related-tool-card__desc">残業時間から残業代を3秒で計算</span>
+            </span>
+            <span class="related-tool-card__cta">使ってみる →</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <nav class="footer-links" aria-label="サイト情報">
+      <a class="link-button" href="../../about/">運営者情報</a>
+      <a class="link-button" href="../../privacy/">プライバシーポリシー</a>
+      <a class="link-button" href="../../contact/">お問い合わせ</a>
+    </nav>
+    <p class="footer__back"><a href="../../" class="back-link">← トップページへ戻る</a></p>
+    <p class="footer__copyright">&copy; AI社員研究所</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
