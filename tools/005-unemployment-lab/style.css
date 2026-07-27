@@ -1281,3 +1281,77 @@
       transition-duration: 0.01ms !important;
     }
   }
+  /* =========================================================
+   Mission13 結果カード表示の調整
+   数字と「円・日」の改行防止
+   ========================================================= */
+
+.result-grid {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(160px, 1fr)
+  );
+  align-items: stretch;
+}
+
+.result-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 130px;
+  padding: 18px 12px;
+}
+
+.result-card h3 {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.result-card p {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+
+  margin: 10px 0 0;
+
+  font-size: clamp(
+    1.15rem,
+    3vw,
+    1.55rem
+  );
+
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+
+  white-space: nowrap;
+  word-break: keep-all;
+}
+
+/* 画面が狭い場合は2列 */
+@media (max-width: 720px) {
+  .result-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .result-card {
+    min-height: 120px;
+  }
+}
+
+/* 小さいスマホでは1列 */
+@media (max-width: 380px) {
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-card {
+    min-height: auto;
+  }
+}
