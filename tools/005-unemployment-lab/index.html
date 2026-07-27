@@ -1,0 +1,771 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CL4PJXLG6M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-CL4PJXLG6M");
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google AdSense -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1213645304949565"
+    crossorigin="anonymous"></script>
+
+  <title>AI失業保険ラボ｜失業手当を無料計算【2026年対応】</title>
+  <meta
+    name="description"
+    content="年齢・退職前の給与・雇用保険の加入期間・離職区分から、失業保険の基本手当日額、給付日数、受給総額、28日分の目安を無料で概算できます。">
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://aishain-lab.jp/tools/005-unemployment-lab/">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AI社員研究所">
+  <meta property="og:title" content="AI失業保険ラボ｜失業手当を無料計算【2026年対応】">
+  <meta
+    property="og:description"
+    content="年齢・退職前の給与・雇用保険の加入期間・離職区分から、失業保険の基本手当日額・給付日数・受給総額を無料で概算。">
+  <meta property="og:url" content="https://aishain-lab.jp/tools/005-unemployment-lab/">
+  <meta property="og:image" content="https://aishain-lab.jp/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI失業保険ラボ｜失業手当を無料計算【2026年対応】">
+  <meta
+    name="twitter:description"
+    content="失業保険の基本手当日額・給付日数・受給総額を無料で概算できます。">
+  <meta name="twitter:image" content="https://aishain-lab.jp/og-image.png">
+
+  <!-- JSON-LD: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AI失業保険ラボ",
+    "url": "https://aishain-lab.jp/tools/005-unemployment-lab/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "ja",
+    "isAccessibleForFree": true,
+    "description": "年齢、退職前の給与、雇用保険の加入期間、離職区分から、雇用保険の基本手当日額、給付日数、受給総額を概算する無料Webツール。",
+    "publisher": {
+      "@type": "Organization",
+      "name": "AI社員研究所",
+      "url": "https://aishain-lab.jp/"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "AI社員研究所",
+        "item": "https://aishain-lab.jp/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "AI失業保険ラボ",
+        "item": "https://aishain-lab.jp/tools/005-unemployment-lab/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage（画面表示と同一内容） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "自己都合退職でも失業保険を受給できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "受給資格を満たしていれば、自己都合退職でも基本手当を受給できます。ただし、7日間の待期に加えて給付制限が付く場合があります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "会社都合退職と自己都合退職では何が違いますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "主に受給資格要件、所定給付日数、給付制限の有無が異なります。離職区分の最終判断はハローワークが行います。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "失業保険はいつ振り込まれますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "受給手続き、7日間の待期、給付制限、失業認定を経て振り込まれます。具体的な日付は認定日やハローワークの処理状況により異なります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "失業保険を受給しながらアルバイトはできますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "働いた日や収入は失業認定申告書で申告する必要があります。勤務時間や収入により不支給、繰越、減額などの扱いが変わるため、事前にハローワークへ確認してください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "賞与は退職前6か月の賃金に含まれますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "原則として、3か月を超える期間ごとに支払われる賞与などは賃金日額の計算対象に含まれません。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "給付制限が1か月になるのはいつからですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2025年4月1日以降の通常の自己都合退職では、給付制限は原則1か月です。一定の場合は3か月となります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "教育訓練を受けると給付制限が解除されますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "対象となる教育訓練等を離職前または離職後に受けた場合、給付制限が解除されることがあります。適用条件はハローワークで確認してください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "65歳以上でもこのツールを使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "この初版は65歳未満の一般的な基本手当を対象としています。65歳以上の高年齢求職者給付金は対象外です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "パートやアルバイトでも失業保険を受給できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "雇用保険に加入し、受給資格などの要件を満たしていれば対象になる可能性があります。個別の加入状況は雇用保険被保険者証やハローワークで確認してください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "この計算結果が実際の支給額になりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "本ツールの結果は概算です。実際の受給資格、離職区分、賃金日額、給付日数、支給額はハローワークの決定が優先されます。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../../common/css/reset.css">
+  <link rel="stylesheet" href="../../common/css/variables.css">
+  <link rel="stylesheet" href="../../common/css/base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a class="header__brand" href="../../" aria-label="AI社員研究所トップへ">
+        <span class="header__mark" aria-hidden="true">研</span>
+        <span class="header__title">AI社員研究所</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="main">
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol class="breadcrumb__list">
+        <li><a href="../../">AI社員研究所</a></li>
+        <li aria-current="page">AI失業保険ラボ</li>
+      </ol>
+    </nav>
+
+    <section class="hero">
+      <div class="hero__badges" aria-label="ツールの特徴">
+        <span class="hero__badge">登録不要</span>
+        <span class="hero__badge">無料</span>
+        <span class="hero__badge">2026年7月までの現行基準</span>
+      </div>
+
+      <p class="hero__eyebrow">AI失業保険ラボ</p>
+      <h1 class="hero__title">失業保険の金額を、かんたん概算。</h1>
+      <p class="hero__desc">
+        年齢・退職前の給与・雇用保険の加入期間・離職区分から、
+        基本手当日額、給付日数、受給総額を計算します。
+      </p>
+
+      <div class="hero__notice" role="note">
+        <strong>このツールは概算です。</strong>
+        離職区分や受給資格、実際の支給額はハローワークの決定が優先されます。
+      </div>
+    </section>
+
+    <div class="ad-slot ad-slot--top" data-ad-position="top" aria-hidden="true"></div>
+
+    <section id="calculator" class="card calculator" aria-labelledby="calculator-title">
+      <div class="section-header">
+        <span class="section-header__number" aria-hidden="true">01</span>
+        <div>
+          <h2 id="calculator-title" class="section-heading">失業保険を計算する</h2>
+          <p class="section-lead">まずは4項目で概算できます。</p>
+        </div>
+      </div>
+
+      <form id="unemployment-form" novalidate>
+        <div id="form-error" class="form-error" role="alert" hidden></div>
+
+        <fieldset class="mode-switch">
+          <legend class="sr-only">計算方法</legend>
+          <label class="mode-switch__item">
+            <input type="radio" name="calculationMode" value="simple" checked>
+            <span>かんたん計算</span>
+          </label>
+          <label class="mode-switch__item">
+            <input type="radio" name="calculationMode" value="detailed">
+            <span>詳しく計算</span>
+          </label>
+        </fieldset>
+
+        <div class="form-grid">
+          <div class="field">
+            <label class="field__label" for="age">
+              離職時の年齢
+              <span class="field__required">必須</span>
+            </label>
+            <div class="input-with-unit">
+              <input
+                id="age"
+                name="age"
+                type="number"
+                min="15"
+                max="64"
+                step="1"
+                inputmode="numeric"
+                autocomplete="off"
+                placeholder="例：35"
+                required>
+              <span class="input-with-unit__unit">歳</span>
+            </div>
+            <p class="field__help">初版は65歳未満の基本手当が対象です。</p>
+          </div>
+
+          <div id="simple-income-field" class="field">
+            <label class="field__label" for="average-monthly-wage">
+              退職前6か月の平均月給
+              <span class="field__required">必須</span>
+            </label>
+            <div class="input-with-unit">
+              <input
+                id="average-monthly-wage"
+                name="averageMonthlyWage"
+                type="number"
+                min="1"
+                max="1000"
+                step="0.1"
+                inputmode="decimal"
+                autocomplete="off"
+                placeholder="例：30"
+                required>
+              <span class="input-with-unit__unit">万円</span>
+            </div>
+            <p class="field__help">
+              賞与を除く、税引前の額面で入力してください。
+            </p>
+          </div>
+
+          <div id="detailed-income-fields" class="field field--full detailed-fields" hidden>
+            <span class="field__label">
+              退職前6か月の賃金
+              <span class="field__required">必須</span>
+            </span>
+            <p class="field__help field__help--top">
+              各月の税引前賃金を入力してください。原則として賞与は含めません。
+            </p>
+
+            <div class="six-month-grid">
+              <label>
+                <span>1か月目</span>
+                <span class="input-with-unit">
+                  <input id="wage-month-1" name="wageMonth1" type="number" min="0" max="1000" step="0.1" inputmode="decimal" placeholder="30">
+                  <span class="input-with-unit__unit">万円</span>
+                </span>
+              </label>
+              <label>
+                <span>2か月目</span>
+                <span class="input-with-unit">
+                  <input id="wage-month-2" name="wageMonth2" type="number" min="0" max="1000" step="0.1" inputmode="decimal" placeholder="30">
+                  <span class="input-with-unit__unit">万円</span>
+                </span>
+              </label>
+              <label>
+                <span>3か月目</span>
+                <span class="input-with-unit">
+                  <input id="wage-month-3" name="wageMonth3" type="number" min="0" max="1000" step="0.1" inputmode="decimal" placeholder="30">
+                  <span class="input-with-unit__unit">万円</span>
+                </span>
+              </label>
+              <label>
+                <span>4か月目</span>
+                <span class="input-with-unit">
+                  <input id="wage-month-4" name="wageMonth4" type="number" min="0" max="1000" step="0.1" inputmode="decimal" placeholder="30">
+                  <span class="input-with-unit__unit">万円</span>
+                </span>
+              </label>
+              <label>
+                <span>5か月目</span>
+                <span class="input-with-unit">
+                  <input id="wage-month-5" name="wageMonth5" type="number" min="0" max="1000" step="0.1" inputmode="decimal" placeholder="30">
+                  <span class="input-with-unit__unit">万円</span>
+                </span>
+              </label>
+              <label>
+                <span>6か月目</span>
+                <span class="input-with-unit">
+                  <input id="wage-month-6" name="wageMonth6" type="number" min="0" max="1000" step="0.1" inputmode="decimal" placeholder="30">
+                  <span class="input-with-unit__unit">万円</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="insured-period">
+              雇用保険の被保険者期間
+              <span class="field__required">必須</span>
+            </label>
+            <select id="insured-period" name="insuredPeriod" required>
+              <option value="">選択してください</option>
+              <option value="under6m">6か月未満</option>
+              <option value="6m-under1y">6か月以上1年未満</option>
+              <option value="1-under5">1年以上5年未満</option>
+              <option value="5-under10">5年以上10年未満</option>
+              <option value="10-under20">10年以上20年未満</option>
+              <option value="20plus">20年以上</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="separation-type">
+              離職区分
+              <span class="field__required">必須</span>
+            </label>
+            <select id="separation-type" name="separationType" required>
+              <option value="">選択してください</option>
+              <option value="general-self">
+                一般離職者（通常の自己都合など）
+              </option>
+              <option value="specific-eligible">
+                特定受給資格者（倒産・解雇など）
+              </option>
+              <option value="specific-reason">
+                特定理由離職者
+              </option>
+            </select>
+            <p class="field__help">
+              判断に迷う場合は一般離職者で試算し、最終区分はハローワークへご確認ください。
+            </p>
+          </div>
+        </div>
+
+        <details class="advanced-options">
+          <summary>給付制限の条件も確認する</summary>
+          <div class="advanced-options__body">
+            <div class="field">
+              <label class="field__label" for="separation-date">退職日</label>
+              <input id="separation-date" name="separationDate" type="date">
+              <p class="field__help">
+                受給期間満了日の目安と制度の適用時期に使用します。
+              </p>
+            </div>
+
+            <div id="self-reason-options" class="advanced-options__group" hidden>
+              <label class="check-row">
+                <input id="repeat-self-separation" name="repeatSelfSeparation" type="checkbox">
+                <span>
+                  今回の退職日前5年間に、正当な理由のない自己都合退職で
+                  受給資格決定を2回以上受けている
+                </span>
+              </label>
+
+              <label class="check-row">
+                <input id="education-exemption" name="educationExemption" type="checkbox">
+                <span>
+                  給付制限解除の対象となる教育訓練等を受けた、または受ける予定
+                </span>
+              </label>
+            </div>
+          </div>
+        </details>
+
+        <div class="form-actions">
+          <button id="calculate-button" class="primary-button" type="submit">
+            失業保険を計算する
+          </button>
+          <p class="form-actions__note">
+            入力内容はブラウザ内で計算し、サーバーへ送信しません。
+          </p>
+        </div>
+      </form>
+    </section>
+
+    <section id="result-section" class="result-section" aria-labelledby="result-title" hidden>
+      <div class="result-hero">
+        <p class="result-hero__eyebrow">概算結果</p>
+        <h2 id="result-title" class="result-hero__title">予想受給総額</h2>
+        <p class="result-hero__amount">
+          <span id="total-benefit">0</span><span class="result-hero__unit">円</span>
+        </p>
+        <p id="result-condition" class="result-hero__condition"></p>
+      </div>
+
+      <div class="result-grid">
+        <article class="result-card">
+          <h3>基本手当日額</h3>
+          <p><span id="daily-benefit">0</span>円</p>
+        </article>
+        <article class="result-card">
+          <h3>所定給付日数</h3>
+          <p><span id="benefit-days">0</span>日</p>
+        </article>
+        <article class="result-card">
+          <h3>28日分の目安</h3>
+          <p><span id="benefit-28-days">0</span>円</p>
+        </article>
+        <article class="result-card">
+          <h3>賃金日額</h3>
+          <p><span id="wage-daily">0</span>円</p>
+        </article>
+      </div>
+
+      <section class="result-detail" aria-labelledby="calculation-detail-title">
+        <h3 id="calculation-detail-title">計算の内訳</h3>
+        <dl class="detail-list">
+          <div>
+            <dt>退職前6か月の賃金合計</dt>
+            <dd><span id="six-month-total">0</span>円</dd>
+          </div>
+          <div>
+            <dt>適用された給付率</dt>
+            <dd><span id="benefit-rate">0</span>%</dd>
+          </div>
+          <div>
+            <dt>年齢別上限の適用</dt>
+            <dd id="cap-status">なし</dd>
+          </div>
+          <div>
+            <dt>給付制限</dt>
+            <dd id="restriction-period">判定なし</dd>
+          </div>
+          <div>
+            <dt>受給期間満了日の目安</dt>
+            <dd id="benefit-expiry-date">退職日を入力すると表示されます</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="advice-card" aria-labelledby="advice-title">
+        <div class="advice-card__icon" aria-hidden="true">!</div>
+        <div>
+          <h3 id="advice-title">結果を見るときの注意</h3>
+          <p id="advice-text">
+            本ツールは公表されている制度をもとにした概算です。
+          </p>
+        </div>
+      </section>
+
+      <section class="timeline-card" aria-labelledby="timeline-title">
+        <h3 id="timeline-title">受給までの基本的な流れ</h3>
+        <ol class="timeline">
+          <li>
+            <span class="timeline__number">1</span>
+            <div>
+              <strong>退職・離職票を受け取る</strong>
+              <p>会社から届く時期は事業所の手続き状況で異なります。</p>
+            </div>
+          </li>
+          <li>
+            <span class="timeline__number">2</span>
+            <div>
+              <strong>ハローワークで受給手続き</strong>
+              <p>求職申込みと離職票の提出などを行います。</p>
+            </div>
+          </li>
+          <li>
+            <span class="timeline__number">3</span>
+            <div>
+              <strong>7日間の待期</strong>
+              <p>離職区分にかかわらず、原則として待期があります。</p>
+            </div>
+          </li>
+          <li id="restriction-timeline-item">
+            <span class="timeline__number">4</span>
+            <div>
+              <strong>給付制限（該当する場合）</strong>
+              <p id="restriction-timeline-text">離職区分などにより期間が異なります。</p>
+            </div>
+          </li>
+          <li>
+            <span class="timeline__number">5</span>
+            <div>
+              <strong>失業認定・振込</strong>
+              <p>認定日や振込日はハローワークの案内をご確認ください。</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <div class="result-actions">
+        <button id="recalculate-button" class="secondary-button" type="button">
+          条件を変えて再計算
+        </button>
+      </div>
+    </section>
+
+    <div class="ad-slot ad-slot--middle" data-ad-position="middle" aria-hidden="true"></div>
+
+    <section class="card content-section" aria-labelledby="about-title">
+      <h2 id="about-title" class="section-heading">失業保険（基本手当）とは</h2>
+      <p>
+        雇用保険の基本手当は、離職した人が失業中の生活を心配せずに求職活動を行い、
+        早く再就職できるよう支給される給付です。
+      </p>
+      <p>
+        金額は原則として離職前6か月の賃金をもとに計算され、
+        年齢・離職区分・被保険者期間によって上限や給付日数が変わります。
+      </p>
+    </section>
+
+    <section class="card content-section" aria-labelledby="difference-title">
+      <h2 id="difference-title" class="section-heading">自己都合と会社都合の主な違い</h2>
+      <div class="responsive-table">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">項目</th>
+              <th scope="col">一般離職者</th>
+              <th scope="col">特定受給資格者等</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">主な例</th>
+              <td>通常の自己都合退職など</td>
+              <td>倒産・解雇など</td>
+            </tr>
+            <tr>
+              <th scope="row">受給資格の原則</th>
+              <td>離職前2年間に12か月以上</td>
+              <td>離職前1年間に6か月以上の場合あり</td>
+            </tr>
+            <tr>
+              <th scope="row">給付制限</th>
+              <td>原則1か月の場合あり</td>
+              <td>原則なし</td>
+            </tr>
+            <tr>
+              <th scope="row">所定給付日数</th>
+              <td>主に90～150日</td>
+              <td>年齢・期間により90～330日</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="content-note">
+        離職区分は離職票の記載だけで確定するとは限りません。最終判断はハローワークが行います。
+      </p>
+    </section>
+
+    <section class="card content-section" aria-labelledby="reform-title">
+      <h2 id="reform-title" class="section-heading">2025年4月からの主な変更</h2>
+      <ul class="check-list">
+        <li>通常の自己都合退職の給付制限が、原則2か月から1か月へ短縮</li>
+        <li>一定の教育訓練等を受ける場合、給付制限が解除される仕組みを開始</li>
+        <li>一定の繰り返し自己都合退職や重責解雇では3か月の給付制限</li>
+      </ul>
+    </section>
+
+    <section class="card content-section" aria-labelledby="source-title">
+      <h2 id="source-title" class="section-heading">計算根拠・公的資料</h2>
+      <ul class="source-list">
+        <li>
+          <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000160564_00048.html"
+             target="_blank" rel="noopener noreferrer">
+            厚生労働省：令和7年8月1日からの基本手当日額等の適用について
+          </a>
+        </li>
+        <li>
+          <a href="https://www.hellowork.mhlw.go.jp/insurance/insurance_benefitdays.html"
+             target="_blank" rel="noopener noreferrer">
+            ハローワーク：基本手当の所定給付日数
+          </a>
+        </li>
+        <li>
+          <a href="https://www.hellowork.mhlw.go.jp/insurance/insurance_basicbenefit.html"
+             target="_blank" rel="noopener noreferrer">
+            ハローワーク：基本手当について
+          </a>
+        </li>
+        <li>
+          <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000160564_00045.html"
+             target="_blank" rel="noopener noreferrer">
+            厚生労働省：教育訓練等による給付制限解除
+          </a>
+        </li>
+        <li>
+          <a href="https://www.hellowork.mhlw.go.jp/insurance/insurance_range.html"
+             target="_blank" rel="noopener noreferrer">
+            ハローワーク：特定受給資格者及び特定理由離職者の範囲
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card faq-section" aria-labelledby="faq-title">
+      <h2 id="faq-title" class="section-heading">よくある質問</h2>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>自己都合退職でも失業保険を受給できますか？</summary>
+          <p>受給資格を満たしていれば受給できます。ただし、7日間の待期に加えて給付制限が付く場合があります。</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>会社都合退職と自己都合退職では何が違いますか？</summary>
+          <p>主に受給資格要件、所定給付日数、給付制限の有無が異なります。離職区分の最終判断はハローワークが行います。</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>失業保険はいつ振り込まれますか？</summary>
+          <p>受給手続き、7日間の待期、給付制限、失業認定を経て振り込まれます。具体的な日付は認定日や処理状況により異なります。</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>失業保険を受給しながらアルバイトはできますか？</summary>
+          <p>働いた日や収入は申告が必要です。勤務時間や収入により扱いが異なるため、事前にハローワークへ確認してください。</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>賞与は退職前6か月の賃金に含まれますか？</summary>
+          <p>原則として、3か月を超える期間ごとに支払われる賞与などは賃金日額の計算対象に含まれません。</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>給付制限が1か月になるのはいつからですか？</summary>
+          <p>2025年4月1日以降の通常の自己都合退職では、給付制限は原則1か月です。一定の場合は3か月となります。</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>教育訓練を受けると給付制限が解除されますか？</summary>
+          <p>対象となる教育訓練等を受けた場合、給付制限が解除されることがあります。適用条件はハローワークで確認してください。</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>65歳以上でもこのツールを使えますか？</summary>
+          <p>初版は65歳未満の一般的な基本手当が対象です。65歳以上の高年齢求職者給付金は対象外です。</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>パートやアルバイトでも失業保険を受給できますか？</summary>
+          <p>雇用保険に加入し、受給資格要件を満たしていれば対象になる可能性があります。</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>この計算結果が実際の支給額になりますか？</summary>
+          <p>本ツールの結果は概算です。実際の受給資格、離職区分、賃金日額、給付日数、支給額はハローワークの決定が優先されます。</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="card related-section" aria-labelledby="related-title">
+      <h2 id="related-title" class="section-heading">関連ツール</h2>
+      <div class="related-grid">
+        <a class="related-card" href="../001-tedori-lab/">
+          <span class="related-card__icon" aria-hidden="true">手</span>
+          <span>
+            <strong>AI手取りラボ</strong>
+            <small>給与の手取りを概算</small>
+          </span>
+        </a>
+        <a class="related-card" href="../002-zangyodai-lab/">
+          <span class="related-card__icon" aria-hidden="true">残</span>
+          <span>
+            <strong>AI残業代ラボ</strong>
+            <small>残業代を概算</small>
+          </span>
+        </a>
+        <a class="related-card" href="../003-juminzei-lab/">
+          <span class="related-card__icon" aria-hidden="true">住</span>
+          <span>
+            <strong>AI住民税ラボ</strong>
+            <small>住民税を概算</small>
+          </span>
+        </a>
+        <a class="related-card" href="../004-bonus-lab/">
+          <span class="related-card__icon" aria-hidden="true">賞</span>
+          <span>
+            <strong>AIボーナスラボ</strong>
+            <small>賞与の手取りを概算</small>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <section class="disclaimer" aria-label="免責事項">
+      <h2>ご利用上の注意</h2>
+      <p>
+        本ツールは、公表されている制度と入力内容に基づく概算結果を表示するもので、
+        受給資格や支給額を保証するものではありません。
+        実際の判断・金額・日程はハローワークの決定をご確認ください。
+      </p>
+      <p>
+        基本手当日額は通常、毎年8月1日に改定されます。
+        本バージョンは2025年8月1日適用の基準を使用しています。
+      </p>
+    </section>
+
+    <p class="version-info">
+      Version 1.0.0 ／ 最終更新：2026年7月27日 ／
+      基本手当日額：2025年8月1日適用基準
+    </p>
+
+    <div class="ad-slot ad-slot--bottom" data-ad-position="bottom" aria-hidden="true"></div>
+  </main>
+
+  <footer class="footer">
+    <nav class="footer-links" aria-label="サイト情報">
+      <a class="link-button" href="../../">トップページへ戻る</a>
+      <a class="link-button" href="../../about/">運営者情報</a>
+      <a class="link-button" href="../../privacy/">プライバシーポリシー</a>
+      <a class="link-button" href="../../contact/">お問い合わせ</a>
+    </nav>
+    <p class="footer__copyright">&copy; AI社員研究所</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
